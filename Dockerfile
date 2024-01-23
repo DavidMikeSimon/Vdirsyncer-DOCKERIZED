@@ -67,7 +67,8 @@ RUN apk update \
         # Cron Update
         #&& apk add --update busybox-suid \
         # Supercronic instead of Cron (for cronjobs)
-        && apk add --no-cache supercronic 
+        && apk add --no-cache supercronic \
+        && apk add --no-cache git
 
 # Set up User
     # Set up Group
@@ -115,7 +116,7 @@ LABEL maintainer="Bleala" \
         org.opencontainers.image.url="https://github.com/Bleala/Vdirsyncer-DOCKERIZED"
 
 # Vdirsyncer installation
-RUN PIPX_HOME="${PIPX_HOME}" PIPX_BIN_DIR="${PIPX_BIN_DIR}" pipx install "vdirsyncer==${VDIRSYNCER_VERSION}" \
+RUN PIPX_HOME="${PIPX_HOME}" PIPX_BIN_DIR="${PIPX_BIN_DIR}" pipx install "git+https://github.com/DavidMikeSimon/vdirsyncer.git@7ffcf58" \
         # For Vdirsyncer 0.18.0
         #&& pip install requests-oauthlib
         # For Vdirsyncer 0.19.x (Pip install)
