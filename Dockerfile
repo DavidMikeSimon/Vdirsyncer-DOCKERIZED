@@ -116,7 +116,7 @@ LABEL maintainer="Bleala" \
         org.opencontainers.image.url="https://github.com/Bleala/Vdirsyncer-DOCKERIZED"
 
 # Vdirsyncer installation
-RUN PIPX_HOME="${PIPX_HOME}" PIPX_BIN_DIR="${PIPX_BIN_DIR}" pipx install "git+https://github.com/DavidMikeSimon/vdirsyncer.git@7ffcf58" \
+RUN PIPX_HOME="${PIPX_HOME}" PIPX_BIN_DIR="${PIPX_BIN_DIR}" pipx install "git+https://github.com/DavidMikeSimon/vdirsyncer.git@405b37b53" \
         # For Vdirsyncer 0.18.0
         #&& pip install requests-oauthlib
         # For Vdirsyncer 0.19.x (Pip install)
